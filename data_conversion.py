@@ -8,6 +8,8 @@ data = pd.read_csv('../data/Test.csv',low_memory=False,parse_dates=['saledate'])
 data['saleYear'] = data.saledate.dt.year 
 data['saleMonth'] = data.saledate.dt.month 
 data['saleDay'] = data.saledate.dt.day 
+data['saleDayOfWeek'] = data.saledate.dt.dayofweek 
+data['saleDayOfYear'] = data.saledate.dt.dayofyear 
 data.drop('saledate',axis=1,inplace=True)
 
 # Converting string data into pandas categories
